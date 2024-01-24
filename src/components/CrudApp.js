@@ -41,26 +41,39 @@ const CrudApp = () => {
   };
 
   const updateData = (data) => {
-    let newData = db.map(el => el.id === data.id ? data : el);
+    let newData = db.map((el) => (el.id === data.id ? data : el));
     setDb(newData);
   };
 
-  const deleteData = (id) => {};
+  const deleteData = (id) => {
+    let isDelete = window.confirm(
+      `Are you sure to delete this register with the id '${id}?`
+    );
+
+    if (!isDelete) {
+      return;
+    } else {
+      let newData = db.filter((el) => el.id != id);
+      setDb(newData);
+    }
+  };
 
   return (
     <div>
       <h2>CRUD App</h2>
-      <CrudForm
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      <CrudTable
-        data={db}
-        setDataToEdit={setDataToEdit}
-        deleteData={deleteData}
-      />
+      <article classname="grid-1-2">
+        <CrudForm
+          createData={createData}
+          updateData={updateData}
+          dataToEdit={dataToEdit}
+          setDataToEdit={setDataToEdit}
+        />
+        <CrudTable
+          data={db}
+          setDataToEdit={setDataToEdit}
+          deleteData={deleteData}
+        />
+      </article>
     </div>
   );
 };
