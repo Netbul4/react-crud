@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
 
-const CrudTableRow = ({ el }) => {
+const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
+  let { name, password, id } = el;
+
   return (
-    <div>
-      <tr>
-        <td>{el.name}</td>
-        <td>{el.password}</td>
-        <td>
-          <button>Edit</button>
-          <button>Delete</button>
-        </td>
-      </tr>
-    </div>
+    <tr>
+      <td>{name}</td>
+      <td>{password}</td>
+      <td>
+        <button onClick={() => setDataToEdit(el)}>Edit</button>
+        <button onClick={() => deleteData(id)}>Delete</button>
+      </td>
+    </tr>
   );
 };
 
