@@ -10,7 +10,7 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Password</th>
+            <th>Username</th>
             <th>Actions</th>
           </tr>
         </thead>
