@@ -32,7 +32,7 @@ const initialDb = [
 ];
 
 const CrudApp = () => {
-  const [db, setDb] = useState(initialDb);
+  const [db, setDb] = useState(null);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const createData = (data) => {
