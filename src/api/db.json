@@ -1,34 +1,16 @@
 {
   "users": [
     {
-      "id": 0,
+      "id": "0",
       "name": "admin",
       "user": "admin",
-      "password": "root"
+      "password": "okayasdasd"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "john",
       "user": "jtheripper",
       "password": "ripper"
-    },
-    {
-      "id": 2,
-      "name": "mike",
-      "user": "michael_",
-      "password": "wazoo"
-    },
-    {
-      "id": 3,
-      "name": "jean",
-      "user": "naj_2020",
-      "password": "password"
-    },
-    {
-      "id": 4,
-      "name": "kendrick",
-      "user": "Kn_1998",
-      "password": "not_lamar"
     }
   ]
 }

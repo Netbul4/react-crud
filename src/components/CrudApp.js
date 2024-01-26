@@ -37,7 +37,7 @@ const CrudApp = () => {
 
   const createData = (data) => {
     data.id = Date.now();
-    setDb([...db, data]);
+    setDb([...initialDb, data]);
   };
 
   const updateData = (data) => {

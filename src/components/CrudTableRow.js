@@ -2,12 +2,12 @@
 import React from "react";
 
 const CrudTableRow = ({ el, setDataToEdit, deleteData }) => {
-  let { name, password, username, id } = el;
+  let { name, user, id } = el;
 
   return (
     <tr>
       <td>{name}</td>
-      <td>{username}</td>
+      <td>{user}</td>
       <td>
         <button onClick={() => setDataToEdit(el)}>Edit</button>
         <button onClick={() => deleteData(id)}>Delete</button>

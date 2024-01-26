@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const initialForm = {
   name: "",
-  username: "",
+  user: "",
   password: "",
   id: null,
 };
@@ -29,7 +29,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.password) {
+    if (!form.name || !form.password || !form.user) {
       alert("Incomplete data.");
       return;
     }
@@ -58,6 +58,13 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           placeholder="Name"
           onChange={handleChange}
           value={form.name}
+        />
+        <input
+          type="text"
+          name="user"
+          placeholder="User"
+          onChange={handleChange}
+          value={form.user}
         />
         <input
           type="password"
