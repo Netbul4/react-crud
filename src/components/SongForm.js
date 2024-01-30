@@ -11,22 +11,22 @@ const SongForm = ({ handleSearch }) => {
 
   const handleChange = (e) => {
     setForm({
-        ...form,
-        [e.target.name]: e.target.value,
+      ...form,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(!form.artist || !form.song){
-        alert("Incomplete data.");
-        return;
+    if (!form.artist || !form.song) {
+      alert("Incomplete data.");
+      return;
     }
 
     handleSearch(form);
     setForm(initialForm);
-  }
+  };
 
   return (
     <div>
