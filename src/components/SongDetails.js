@@ -15,10 +15,10 @@ const SongDetails = ({ search, lyrics, bio }) => {
           bgColor="#dc3545"
         />
       ) : (
-        <SongLyrics />
+        <SongLyrics title={search.song} lyrics={lyrics.lyrics}/>
       )}
       {bio.artists ? (
-        <SongArtist />
+        <SongArtist artist={bio.artists[0]}/>
       ) : (
         <Message
           msg={`Error: Artist ${search.artist} doesn't exist`}

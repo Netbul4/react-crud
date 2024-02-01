@@ -52,6 +52,11 @@ hr {
   margin: 2rem auto;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -65,11 +70,18 @@ td {
   border-bottom: thin solid #dedede;
 }
 
-@media screen and (min-width: 1024px){
-    .grid-1-2{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-        gap: 2rem;
-    }
+@media screen and (min-width: 1024px) {
+  .grid-1-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
+
+  .grid-1-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
 }
