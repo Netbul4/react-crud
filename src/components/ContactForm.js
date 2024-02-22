@@ -10,9 +10,30 @@ const initialForm = {
 
 const validationsForm = (form) => {
   let errors = {};
+  let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+  let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+  let regexComments = /^.{1,255}$/;
 
   if (!form.name.trim()) {
     errors.name = "Field 'Name' is required.";
+  } else if (!regexName.test(form.name.trim())) {
+    errors.name = "Field 'Name' only accepts letters and white spaces.";
+  }
+
+  if (!form.email.trim()) {
+    errors.email = "Field 'Email' is required.";
+  } else if (!regexEmail.test(form.email.trim())) {
+    errors.email = "Field 'Email' is not valid.";
+  }
+
+  if (!form.subject.trim()) {
+    errors.subject = "Field 'Subject' is required.";
+  }
+
+  if (!form.comments.trim()) {
+    errors.comments = "Field 'Comments' is required.";
+  } else if (!regexComments.test(form.comments.trim())) {
+    errors.comments = "Field 'Comments' only accepts length of 255 characters.";
   }
 
   return errors;
@@ -54,7 +75,7 @@ const ContactForm = () => {
           placeholder="Email"
           onBlur={handleBlur}
           onChange={handleChange}
-          value={form.name}
+          value={form.email}
           required
         />
         {errors.email && <p style={styles}>{errors.email}</p>}
@@ -64,7 +85,7 @@ const ContactForm = () => {
           placeholder="Subject"
           onBlur={handleBlur}
           onChange={handleChange}
-          value={form.name}
+          value={form.subject}
           required
         />
         {errors.subject && <p style={styles}>{errors.subject}</p>}
@@ -75,12 +96,13 @@ const ContactForm = () => {
           placeholder="Type your comments"
           onBlur={handleBlur}
           onChange={handleChange}
-          value={form.name}
+          value={form.comments}
           required
         ></textarea>
         {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Send"></input>
       </form>
+      f{" "}
     </div>
   );
 };
