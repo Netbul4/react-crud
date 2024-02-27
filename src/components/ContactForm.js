@@ -1,5 +1,7 @@
 "use client";
 import { useForm } from "@/hooks/useForm";
+import Loader from "./Loader";
+import Message from "./Message";
 
 const initialForm = {
   name: "",
@@ -102,7 +104,9 @@ const ContactForm = () => {
         {errors.comments && <p style={styles}>{errors.comments}</p>}
         <input type="submit" value="Send"></input>
       </form>
-      f{" "}
+      {loading && <Loader />}
+      {response && (
+      <Message msg="Data has been sent." bgColor='#198754'/>)}
     </div>
   );
 };
