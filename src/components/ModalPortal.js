@@ -1,6 +1,6 @@
 import "./Modal.module.css";
 
-const Modal = ({ children, isOpen, closeModal }) => {
+const ModalPortal = ({ children, isOpen, closeModal }) => {
   const handleModalContainerClick = (e) => e.stopPropagation();
 
   return (
@@ -15,4 +15,4 @@ const Modal = ({ children, isOpen, closeModal }) => {
   );
 };
 
-export default Modal;
+export default ModalPortal;

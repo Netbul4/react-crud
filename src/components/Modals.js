@@ -1,8 +1,11 @@
+import { ReactDOM } from "react-dom";
 import { useModal } from "../hooks/useModal";
+import CrudForm from "./CrudForm";
 import Modal from "./Modal";
 
 const Modals = () => {
   const [isOpenModal1, openModal1, closeModal1] = useModal(false);
+  const [isOpenModalPortal, openModalPortal, closeModalPortal] = useModal(false);
 
   return (
     <div>
@@ -12,6 +15,10 @@ const Modals = () => {
         <h3>Modal 1</h3>
         <p>Modal content.</p>
         <img src=""></img>
+      </Modal>
+      <button onClick={openModalPortal}>Modal Portal</button>
+      <Modal isOpen={isOpenModalPortal} closeModal={closeModalPortal}>
+        <CrudForm />
       </Modal>
     </div>
   );
